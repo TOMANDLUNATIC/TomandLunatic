@@ -109,10 +109,9 @@ li:hover{
     opacity: 0.3;
 }
 table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-    
-  }
+  border: 1px solid white;
+  border-collapse: collapse;
+}
 .slider .bx-wrapper .bx-next:hover{
     opacity: 0.6;
 }
