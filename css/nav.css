@@ -45,8 +45,8 @@ body .nav .nav-menu li a {
 	text-decoration: underline;
 }
 .nav.yoga .nav-menu li a:hover {
-	color: #F5F5F5;
-	text-decoration: underline;
+	color: #000;
+	text-decoration: none;
 }
 .nav.yoga .nav-toggled {
 	min-height:36px;

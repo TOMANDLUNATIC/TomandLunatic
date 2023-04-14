@@ -34,31 +34,32 @@ h1{
     font-family: 'Nobile', sans-serif;
     text-align: center;
     font-size: 175%;
-    color: #4A4444;
+    color: yellow;
     text-transform: : uppercase;
     letter-spacing: 3px;
     padding: 3% 3%;
 }
 #welcome-section{
-   padding-left: 25%;
-   padding-right: 25%;
+   padding-left: 0%;
+   padding-right: 5%;
 }
 #welcome-header{
+  width: 100%;
   border-style: solid;
-  border-color: #000;
-  border-width: 3px;
+  border-color:yellow;
+  border-width: 5px;
 }
 h3{
     font-family: 'Nobile', sans-serif;
     text-align: center;
-    color: #4A4444;
+    color: yellow;
     text-transform: : uppercase;
     letter-spacing: 1%;
     margin-top: 5%;
 }
 p{
     padding: 1%;
-    color: #4A4444;
+    color: white;
     text-align: justify;
 }
 
@@ -68,6 +69,8 @@ img{
 }
 li:hover{
   padding-bottom: 10px;
+  background-color: yellow;
+  color:black ;
 }
 #banner-wrapper1, #banner-wrapper2{
     max-width: 90%;
@@ -225,3 +228,7 @@ html {
     }
 }
 /*-- End Media Queries --*/
+
+li:visited {
+    background-color: yellow;
+}
