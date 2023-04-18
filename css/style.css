@@ -107,8 +107,8 @@ img{
 }
 li:hover{
   padding-bottom: 10px;
-  background-color: yellow;
-  color:black ;
+  background-color: #ffc800;
+  color:black;
 }
 #banner-wrapper1, #banner-wrapper2{
     max-width: 90%;
