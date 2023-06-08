@@ -311,3 +311,8 @@ html {
 li:visited {
     background-color: yellow;
 }
+element.style {
+    display: block;
+    -webkit-user-select: none;
+    padding-left: 300px;
+}
