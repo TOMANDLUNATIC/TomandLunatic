@@ -7,87 +7,32 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="img/favicon.jpg" />
-    <style>
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2, h3 {
-            color: #00ffea;
-            text-shadow: 0 0 10px #00ffea;
-        }
-        a {
-            color: #00ffea;
-            text-decoration: none;
-        }
-        .nav-outer {
-            background: #111;
-            border-bottom: 2px solid #00ffea;
-        }
-        .logo img {
-            height: 60px;
-        }
-        .slide-wrap img {
-            width: 100%;
-            max-height: 500px;
-            object-fit: cover;
-            border: 2px solid #00ffea;
-        }
-        #welcome-section iframe,
-        .featured-game iframe {
-            border: 2px solid #00ffea;
-            border-radius: 5px;
-        }
-        .section-wrapper {
-            padding: 50px 10%;
-        }
-        .team-card, .game-card {
-            background: #111;
-            border: 1px solid #00ffea;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .team-card:hover, .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #00ffea;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            border-top: 2px solid #00ffea;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <div class="nav-outer">
         <div class="nav-wrap">
-            <nav class="navigation">
-                <div class="logo">
-                    <a href="https://www.youtube.com/@TomandLunatic">
-                        <img src="img/logo.jpg" alt="Team TL Logo">
-                    </a>
-                </div>
-            </nav>
+            <div class="logo">
+                <a href="#home"><img src="img/logo.jpg" alt="Team TL Logo"></a>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#tournaments">Tournaments</a></li>
+                <li><a href="tlc.html">TLC Page</a></li>
+            </ul>
         </div>
     </div>
 
     <!-- Slider -->
     <div class="slide-wrap">
-        <section class="slider">
-            <ul class="slider1">
-                <li><img src="img/witcher1.jpg"></li>
-                <li><img src="img/witcher2.jpg"></li>
-                <li><img src="img/witcher3.jpg"></li>
-                <li><img src="img/witcher4.jpg"></li>
-            </ul>
-        </section>
+        <ul class="slider1">
+            <li><img src="img/witcher1.jpg" alt=""></li>
+            <li><img src="img/witcher2.jpg" alt=""></li>
+            <li><img src="img/witcher3.jpg" alt=""></li>
+            <li><img src="img/witcher4.jpg" alt=""></li>
+        </ul>
     </div>
 
     <!-- Welcome Section -->
@@ -103,33 +48,54 @@
     <!-- Team Section -->
     <div class="section-wrapper" id="team">
         <h1>Our Team</h1>
-        <div class="team-card">
-            <h2>Team TL Owners</h2>
-            <p>"It's not only the owners, admins, or mods of TL. It's all of us. Everyone is part of Team TL."</p>
-        </div>
-        <div class="team-card">
-            <h2>Website Designer</h2>
-            <p>This esports website is designed by a pro developer. Efficient, stylish, and fully optimized.</p>
+        <div class="grid">
+            <div class="team-card">
+                <h2>Team TL Owners</h2>
+                <p>"It's not only the owners, admins, or mods of TL. Everyone is part of Team TL."</p>
+            </div>
+            <div class="team-card">
+                <h2>Website Designer</h2>
+                <p>This esports website is designed by a pro developer. Efficient, stylish, and fully optimized.</p>
+            </div>
         </div>
     </div>
 
     <!-- Featured Gameplays -->
     <div class="section-wrapper" id="games">
         <h1>Featured Gameplays</h1>
-        <div class="game-card">
-            <h2>Mobile Legends</h2>
-            <iframe width="400" height="210" src="https://www.youtube.com/embed/iSppjJDBln0?autoplay=1&mute=1"></iframe>
-            <p>Mobile Legends: Bang Bang is a MOBA game for mobile phones. Free-to-play with in-game purchases for skins and characters.</p>
+        <div class="grid">
+            <div class="game-card">
+                <h2>Mobile Legends</h2>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/iSppjJDBln0?autoplay=1&mute=1"></iframe>
+                <p>Mobile Legends: Bang Bang is a MOBA game for mobile phones. Free-to-play with in-game purchases for skins and characters.</p>
+            </div>
+            <div class="game-card">
+                <h2>Genshin Impact</h2>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/fWKSBh3iWcw?autoplay=1&mute=1"></iframe>
+                <p>Genshin Impact is an open-world action RPG. Switch between characters for combos and strategy in combat.</p>
+            </div>
+            <div class="game-card">
+                <h2>PC Games</h2>
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/ZgSsbsx-OmY?autoplay=1&mute=1"></iframe>
+                <p>PC games provide high customization, better graphics, and flexible hardware control for an immersive experience.</p>
+            </div>
         </div>
-        <div class="game-card">
-            <h2>Genshin Impact</h2>
-            <iframe width="400" height="210" src="https://www.youtube.com/embed/fWKSBh3iWcw?autoplay=1&mute=1"></iframe>
-            <p>Genshin Impact is an open-world action RPG. Switch between characters for combos and strategy in combat.</p>
-        </div>
-        <div class="game-card">
-            <h2>PC Games</h2>
-            <iframe width="400" height="210" src="https://www.youtube.com/embed/ZgSsbsx-OmY?autoplay=1&mute=1"></iframe>
-            <p>PC games provide high customization, better graphics, and flexible hardware control for an immersive experience.</p>
+    </div>
+
+    <!-- Tournaments -->
+    <div class="section-wrapper" id="tournaments">
+        <h1>Upcoming Tournaments</h1>
+        <div class="grid">
+            <div class="tournament-card">
+                <h2>TLC Cup #1</h2>
+                <p>Date: 20 Dec 2025 | Game: Mobile Legends</p>
+                <p>Status: Registration Open</p>
+            </div>
+            <div class="tournament-card">
+                <h2>TLC Invitational</h2>
+                <p>Date: 5 Jan 2026 | Game: PC Games</p>
+                <p>Status: Live Stream</p>
+            </div>
         </div>
     </div>
 
