@@ -63,13 +63,29 @@
         <section id="welcome-section">
             <h1 id="welcome-header" style="color: yellow;"><center><strong>Welcome to TomandLunatic</strong> </center></h1>
            <br><center><iframe
+  id="ytLatest"
   width="665"
   height="370"
-  src="https://www.youtube.com/embed/videoseries?list=UUVuo4m4xpPt98x7f5R8IQrg&autoplay=1&mute=1"
   frameborder="0"
   allow="autoplay; encrypted-media"
   allowfullscreen>
 </iframe>
+
+<script>
+const API_KEY = "YOUR_API_KEY";
+const CHANNEL_ID = "UCVuo4m4xpPt98x7f5R8IQrg";
+
+fetch(
+  `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1`
+)
+.then(res => res.json())
+.then(data => {
+  const videoId = data.items[0].id.videoId;
+  document.getElementById("ytLatest").src =
+    `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+});
+</script>
+
 </center> 
         </section>
         <h3>Tom and Lunatic's Tale</h3>
