@@ -59,21 +59,50 @@
     <!--- End Slider -->
     <!-- Start Banner Wrapper -->
     <div id="banner-wrapper1">
-        <div class="clearfix"></div>
-        <section id="welcome-section">
-            <h1 id="welcome-header" style="color: yellow;"><center><strong>Welcome to TomandLunatic</strong> </center></h1>
-           <br><center><iframe
-      width="665"
-      height="370"
-      src="https://www.youtube.com/embed/live_stream?channel=UCVuo4m4xpPt98x7f5R8IQrg&autoplay=1&mute=1"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe></center> 
-        </section>
-        <h3>Tom and Lunatic's Tale</h3>
-        <p>A Gaming Channel since 2021,..... [ story will be updated soon ]</p>
-        <br>
+  <div class="clearfix"></div>
+
+  <section id="welcome-section">
+    <h1 id="welcome-header" style="color: yellow; text-align:center;">
+      <strong>Welcome to TomandLunatic</strong>
+    </h1>
+
+    <br>
+
+    <center>
+      <iframe
+        id="ytLiveFrame"
+        width="665"
+        height="370"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </center>
+  </section>
+
+  <h3>Tom and Lunatic's Tale</h3>
+  <p>A Gaming Channel since 2021,..... [ story will be updated soon ]</p>
+  <br>
+</div>
+
+<script>
+  const liveURL =
+    "https://www.youtube.com/embed/live_stream?channel=UCVuo4m4xpPt98x7f5R8IQrg&autoplay=1&mute=1";
+
+  const fallbackURL =
+    "https://www.youtube.com/embed/iSppjJDBln0?autoplay=1&mute=1";
+
+  const iframe = document.getElementById("ytLiveFrame");
+
+  // try LIVE first
+  iframe.src = liveURL;
+
+  // if LIVE not available → fallback
+  iframe.onerror = function () {
+    iframe.src = fallbackURL;
+  };
+</script>
+
     <!-- End Banner Wrapper -->
     <div class="clearfix"></div>
     <!-- Start Parallax Section -->
