@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swiss Bracket</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* 🔥 CENTER FRAME */
+.swiss-wrapper {
+    width: 95%;
+    max-width: 1100px;
+    margin-top: 50px;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,215,0,0.3);
+
+    box-shadow:
+        0 0 30px rgba(255,140,0,0.2),
+        0 20px 60px rgba(0,0,0,0.8);
+
+    position: relative;
+}
+
+/* ✨ GOLD SWIPE (same theme) */
+.swiss-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,215,0,0.3),
+        transparent
+    );
+
+    top: -100%;
+    left: -100%;
+    transform: rotate(25deg);
+    transition: 0.8s;
+}
+
+.swiss-wrapper:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+/* 📺 IFRAME */
+.swiss-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .swiss-wrapper iframe {
+        height: 300px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>SWISS BRACKET</h1>
+</div>
+
+<div class="swiss-wrapper">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSXYRYnZiYmZKwlHDjYzx5udA_OXeDXtvX9L4v9iI66AsspyZISfaimV5ETcI4BGQXH1JoTgqrw6JZ3/pubembed?start=true&loop=true&delayms=3000"
+        allowfullscreen>
+    </iframe>
+</div>
+
+</body>
+</html>

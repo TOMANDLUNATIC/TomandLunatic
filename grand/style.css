@@ -1,0 +1,380 @@
+/* 🌌 BASE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+
+    background: radial-gradient(circle at top, #1a0000, #000000 75%);
+    
+    color: #eaeaea;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* 🔥 AMBIENT FIRE LIGHT */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(circle at 50% 10%, rgba(255,80,0,0.15), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(255,140,0,0.1), transparent 60%);
+
+    animation: fireGlow 6s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes fireGlow {
+    from { opacity: 0.4; transform: scale(1); }
+    to { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* 🏆 HEADER */
+.header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.header img {
+    width: 110px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.5));
+}
+
+.header h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: #f5c542;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.4);
+}
+
+/* 🎯 CONTAINER */
+.container {
+    display: flex;
+    gap: 40px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 🧊 CARD */
+.card {
+    width: 240px;
+    height: 150px;
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 215, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: #f5c542;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ✨ GOLD SWIPE */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 180%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255, 215, 0, 0.4),
+        rgba(255, 255, 255, 0.25),
+        transparent 60%
+    );
+
+    transform: rotate(25deg);
+    top: -120%;
+    left: -120%;
+    transition: 0.7s ease;
+}
+
+.card:hover::before {
+    top: 120%;
+    left: 120%;
+}
+
+/* 💥 HOVER */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border: 1px solid rgba(255, 215, 0, 0.4);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.7),
+        0 0 20px rgba(255, 140, 0, 0.25);
+
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+/* 🧊 TEAM GRID */
+#teamsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin-top: 60px;
+}
+
+/* 🔥 TEAM CARD */
+.team-card {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 18px;
+
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* ✨ SWIPE */
+.team-card::before {
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 180%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,215,0,0.4),
+        rgba(255,255,255,0.2),
+        transparent 60%
+    );
+
+    transform: rotate(25deg);
+    top: -120%;
+    left: -120%;
+    transition: 0.7s;
+}
+
+.team-card:hover::before {
+    top: 120%;
+    left: 120%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border: 1px solid rgba(255,215,0,0.4);
+}
+
+/* 🏷️ LOGO */
+.team-logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 📝 TEXT */
+.team-card h3 {
+    color: #f5c542;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* 🏷️ SHORT TAG */
+.tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+
+    border-radius: 10px;
+    background: rgba(255,215,0,0.1);
+    border: 1px solid rgba(255,215,0,0.3);
+
+    color: #ffd700;
+}
+
+/* 🔥 MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🧊 MODAL BOX */
+.modal-box {
+    width: 90%;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 20px;
+
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255,215,0,0.3);
+
+    text-align: center;
+    position: relative;
+
+    box-shadow:
+        0 0 30px rgba(255,140,0,0.2),
+        0 20px 60px rgba(0,0,0,0.8);
+
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ❌ CLOSE */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffd700;
+}
+
+/* 🏷️ MODAL LOGO */
+.modal-logo {
+    width: 75px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 🏆 TEAM NAME */
+.modal-box h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* 📋 PLAYERS */
+.players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 👤 PLAYER */
+.player {
+    padding: 10px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,215,0,0.2);
+
+    transition: 0.2s;
+}
+
+.player:hover {
+    background: rgba(255,215,0,0.1);
+}
+
+/* 🔄 SUB */
+.sub {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+/* 🔥 CENTER FRAME */
+.swiss-wrapper {
+    width: 95%;
+    max-width: 1100px;
+    margin-top: 50px;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,215,0,0.3);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.7);
+
+    position: relative;
+}
+
+/* 📺 IFRAME */
+.swiss-wrapper iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .swiss-wrapper iframe {
+        height: 300px;
+    }
+}
+
+/* 🔥 ONLY FOR TEAMS PAGE */
+.fire-bg::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(circle at 50% 10%, rgba(255,80,0,0.15), transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(255,140,0,0.1), transparent 60%);
+
+    animation: fireGlow 6s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+/* ❌ NO GLOW PAGE */
+.no-fire::before {
+    display: none;
+}
+
+/* ❌ REMOVE BACKGROUND FIRE GLOW ONLY FOR SWISS */
+body::before {
+    display: none !important;
+}
+
+/* ❌ REMOVE GOLD SWIPE EFFECT */
+.swiss-wrapper::before {
+    display: none !important;
+}
+
+/* ❌ REMOVE EXTRA GLOW SHADOW */
+.swiss-wrapper {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8); /* clean shadow only */
+}
