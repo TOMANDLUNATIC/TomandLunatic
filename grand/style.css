@@ -378,3 +378,277 @@ body::before {
 .swiss-wrapper {
     box-shadow: 0 20px 60px rgba(0,0,0,0.8); /* clean shadow only */
 }
+
+/* 📅 SCHEDULE CONTAINER */
+#scheduleContainer {
+    width: 95%;
+    max-width: 900px;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 🧊 MATCH CARD */
+.match-card {
+    background: linear-gradient(135deg, #0b0b0b, #1a1a1a, #0b0b0b);
+    border-radius: 16px;
+    padding: 15px;
+
+    border: 1px solid rgba(255, 193, 7, 0.4);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+
+    position: relative;
+    transition: 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+/* 🏷 MATCH ID */
+.match-id {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    background: linear-gradient(#FFD54F, #FFA000);
+    color: black;
+
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* 🕒 TIME */
+.match-time {
+    text-align: center;
+    color: #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* ⚔️ TEAMS */
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 🛡 TEAM */
+.team {
+    text-align: center;
+    width: 40%;
+}
+
+.team img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: black;
+}
+
+/* 🆚 */
+.vs {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 🎯 MATCH TYPE */
+.match-type {
+    text-align: center;
+    margin-top: 10px;
+
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* 🖱 FIX CURSOR */
+.team p,
+.vs,
+.match-type {
+    cursor: default; /* normal arrow */
+}
+
+/* 🎯 ONLY CLICKABLE = HAND */
+.host {
+    cursor: pointer;
+}
+
+/* ❌ REMOVE TEXT SELECT (optional pro feel) */
+.match-card {
+    user-select: none;
+}
+
+/* 🔝 TOP BAR */
+.top-bar {
+    width: 95%;
+    max-width: 900px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 🏠 HOME BUTTON */
+.home-btn {
+    text-decoration: none;
+
+    padding: 8px 16px;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #FFD54F, #FFA000);
+    color: black;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+
+    transition: 0.3s;
+}
+
+/* 🔥 HOVER EFFECT */
+.home-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.7),
+        0 0 10px rgba(255, 193, 7, 0.6);
+}
+/* 🎙 HOST SECTION */
+.hosts-section {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.hosts-section h2 {
+    color: #f5c542;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+/* 🧊 HOST GRID */
+.hosts-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 🎯 HOST CARD */
+.host-card {
+    text-decoration: none;
+
+    padding: 10px 18px;
+    border-radius: 12px;
+
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+
+    color: #ffd700;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* 🔥 HOVER */
+.host-card:hover {
+    transform: translateY(-4px) scale(1.05);
+
+    background: rgba(255, 215, 0, 0.15);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.7),
+        0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* 🏠 HOME PAGE FIX */
+.home-page {
+    display: block !important;
+}
+
+/* 📦 WRAPPER */
+.home-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🏆 HEADER */
+.home-header {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.home-header img {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.home-header h1 {
+    font-size: 42px;
+    color: #f5c542;
+}
+
+/* 🎙 HOST SECTION */
+.hosts-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hosts-section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* 🧊 HOST ROW */
+.hosts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 🎯 HOST BUTTON */
+.host-card {
+    padding: 6px 14px;
+    border-radius: 10px;
+
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+
+    color: #ff7300;
+    font-size: 13px;
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+.host-card:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* 🔥 CARDS */
+.home-container {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* 🎮 CARD SIZE FIX */
+.card {
+    width: 220px;
+    height: 140px;
+}
