@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     overflow-x: hidden;
 }
 
@@ -857,8 +857,8 @@ body.rules-page::before {
 
 /* 📦 Proper centered layout */
 body.rules-page .rules-wrapper {
-    width: 40%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1000px;
     margin: 40px auto;
 
     border-radius: 20px;
@@ -958,4 +958,139 @@ body.rules-page .header {
 .bracket.lower {
     background: linear-gradient(45deg, #007bff, #66ccff);
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+#scheduleContainer {
+    width: 95%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.points-table {
+    overflow-x: auto;
+}
+
+/* =========================
+   ✅ SAFE FIX PATCH (FINAL)
+========================= */
+
+/* 🔥 Fix Rules Page Width (no collapse) */
+body.rules-page {
+    align-items: center !important;
+}
+
+body.rules-page .rules-wrapper {
+    width: 95% !important;
+    max-width: 1000px !important;
+    margin: 40px auto !important;
+}
+
+/* 🔥 Fix Round Robin Layout */
+body.roundrobin-page {
+    align-items: center !important;
+}
+
+/* 🔥 Fix Table Overflow (Round Robin) */
+.points-table {
+    overflow-x: auto;
+}
+
+.points-table table {
+    min-width: 600px;
+}
+
+/* 🔥 Navbar Mobile Fix (safe, no break) */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+}
+
+/* =========================
+   🧠 UNIVERSAL CLEAN FIX (SAFE PATCH)
+   DO NOT EDIT EXISTING CODE
+========================= */
+
+/* 🔥 Force all pages to behave same layout */
+body {
+    align-items: center !important;
+}
+
+/* 📦 universal page wrapper behavior */
+.header,
+#scheduleContainer,
+.container,
+#teamsContainer {
+    width: 95%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 🔝 TOP BAR FIX (MAIN ISSUE ROOT) */
+.top-bar {
+    width: 95%;
+    max-width: 900px;
+    margin: 20px auto;
+
+    display: flex;
+    flex-wrap: wrap;          /* IMPORTANT */
+    justify-content: center;  /* prevents left/right split */
+    align-items: center;
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+/* 🔘 NAV BUTTON SAFE WRAP */
+.nav-btn {
+    white-space: nowrap;  /* prevents breaking inside text */
+}
+
+/* 📱 MOBILE NAV FIX (ONLY ALIGNMENT, NO STRUCTURE CHANGE) */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .nav-btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+/* 📦 RULES PAGE SAFETY (DON'T COLLAPSE IFRAME) */
+body.rules-page .rules-wrapper {
+    width: 95% !important;
+    max-width: 1000px !important;
+    margin: 20px auto !important;
+}
+
+/* 📦 ROUND ROBIN SAFE FIX */
+body.roundrobin-page #scheduleContainer {
+    width: 95%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* 🧊 TABLE NEVER BREAKS */
+.points-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 🧾 TABLE MIN WIDTH ONLY WHEN NEEDED */
+.points-table table {
+    min-width: 600px;
+}
+
+/* 🔥 PREVENT FLEX COLLAPSE ISSUES */
+body.rules-page,
+body.roundrobin-page {
+    align-items: center !important;
 }
