@@ -42,7 +42,7 @@ fetch(sheetURL)
 function renderTable(data) {
     let html = `
     <div class="points-table">
-        <h2>🏆 Standings</h2>
+        <h2>Standings</h2>
         <table>
             <thead>
                 <tr>

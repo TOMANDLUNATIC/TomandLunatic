@@ -62,33 +62,36 @@ async function loadSchedule() {
             card.className = "match-card";
 
             card.innerHTML = `
-                <div class="match-id">#M${obj["MATCH"] || "-"}</div>
+    <div class="match-id">#M${obj["MATCH"] || "-"}</div>
 
-                <div class="match-time">
-                    ${formatDate(obj["DATE"], obj["TIME"])}
-                </div>
+    <div class="match-time">
+        ${formatDate(obj["DATE"], obj["TIME"])}
+    </div>
 
-                <div class="teams">
-                    <div class="team">
-                        <img src="${obj["B_LOGO"]}" onerror="this.src='fallback.png'" />
-                        <p>${obj["TEAM BLUE"] || "-"}</p>
-                    </div>
+    <div class="teams">
+        <div class="team">
+            <img src="${obj["B_LOGO"]}" onerror="this.src='fallback.png'" />
+            <p>${obj["TEAM BLUE"] || "-"}</p>
+        </div>
 
-                    <div class="vs">VS</div>
+        <div class="vs">VS</div>
 
-                    <div class="team">
-                        <img src="${obj["R_LOGO"]}" onerror="this.src='fallback.png'" />
-                        <p>${obj["TEAM RED"] || "-"}</p>
-                    </div>
-                </div>
+        <div class="team">
+            <img src="${obj["R_LOGO"]}" onerror="this.src='fallback.png'" />
+            <p>${obj["TEAM RED"] || "-"}</p>
+        </div>
+    </div>
 
-                <div class="match-type">${obj["MATCHTYPE"] || "-"}</div>
+    <div class="match-type">${obj["MATCHTYPE"] || "-"}</div>
 
-                <div class="host" onclick="openHost('${obj["HOST"]}')">
-                    🎙️ ${obj["HOST"] || "Unknown Host"}
-                </div>
-            `;
+    <div class="host" onclick="openHost('${obj["HOST"]}')">
+        🎙️ ${obj["HOST"] || "Unknown Host"}
+    </div>
 
+    <div class="bracket ${obj["BRACKET"]?.toLowerCase()}">
+        ${obj["BRACKET"] || ""}
+    </div>
+`;
             container.appendChild(card);
         }
 

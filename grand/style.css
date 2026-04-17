@@ -360,14 +360,10 @@ body::before {
 }
 
 /* ❌ NO GLOW PAGE */
-.no-fire::before {
-    display: none;
-}
+
 
 /* ❌ REMOVE BACKGROUND FIRE GLOW ONLY FOR SWISS */
-body::before {
-    display: none !important;
-}
+
 
 /* ❌ REMOVE GOLD SWIPE EFFECT */
 .swiss-wrapper::before {
@@ -483,14 +479,6 @@ body::before {
 }
 
 /* 🔝 TOP BAR */
-.top-bar {
-    width: 95%;
-    max-width: 900px;
-    margin-top: 20px;
-
-    display: flex;
-    justify-content: flex-start;
-}
 
 /* 🏠 HOME BUTTON */
 .home-btn {
@@ -689,26 +677,84 @@ body {
 }
 
 /* 🔝 TOP BAR */
+/* 🔝 TOP BAR ALIGN FIX */
 .top-bar {
     width: 95%;
     max-width: 900px;
     margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 15px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,215,0,0.15);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
-.home-btn {
+/* 🔘 COMMON NAV STYLE */
+.nav-btn {
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 10px;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 8px;
 
+    color: #ccc;
+
+    transition: 0.25s ease;
+
+    position: relative;
+}
+
+/* ✨ SUBTLE HOVER (for others) */
+.nav-btn:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+}
+
+/* 🏆 HOME = PRIMARY BUTTON */
+.nav-btn.home {
     background: linear-gradient(135deg, #FFD54F, #FFA000);
     color: black;
     font-weight: bold;
 
-    transition: 0.3s;
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.6),
+        0 0 10px rgba(255,193,7,0.5);
 }
 
-.home-btn:hover {
-    transform: scale(1.05);
+/* 🔥 HOME HOVER */
+.nav-btn.home:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.7),
+        0 0 15px rgba(255,193,7,0.8);
+}
+
+/* 📍 OPTIONAL: ACTIVE PAGE INDICATOR */
+.nav-btn.active {
+    color: #ffd700;
+}
+
+.nav-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    height: 2px;
+    background: gold;
+    border-radius: 2px;
 }
 
 /* 🏆 HEADER */
@@ -803,4 +849,131 @@ body {
         padding: 8px;
         font-size: 12px;
     }
+}
+
+/* =========================
+   ✅ RULES PAGE FIX (FINAL)
+========================= */
+
+/* 🔓 Remove flex only for rules page */
+body.rules-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 THIS centers navbar */
+}
+
+/* 🔥 Keep fire effect only disabled here */
+body.rules-page::before {
+    display: none;
+}
+
+/* 📦 Proper centered layout */
+body.rules-page .rules-wrapper {
+    width: 40%;
+    max-width: 1200px;
+    margin: 40px auto;
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,215,0,0.25);
+    background: rgba(0,0,0,0.6);
+}
+
+/* 🖥 FIX IFRAME (MAIN ISSUE) */
+body.rules-page .rules-wrapper iframe {
+    width: 100%;
+    height: 80vh;
+
+    border: none;
+    display: block;   /* 🔥 IMPORTANT */
+    background: #fff;
+
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* 🏆 Header alignment */
+body.rules-page .header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* 📱 Mobile fix */
+@media (max-width: 768px) {
+    body.rules-page .rules-wrapper iframe {
+        height: 70vh;
+    }
+}
+
+.team-card {
+    position: relative;
+}
+
+/* 🔥 Badge */
+.position {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+
+    text-transform: uppercase;
+    color: #fff;
+    background: #333;
+}
+
+/* 🥇 Upper → RED Gradient */
+.position.upper {
+    background: linear-gradient(45deg, #ff1a1a, #990000);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* 🔻 Lower → Blue + Sky Blue */
+.position.lower {
+    background: linear-gradient(45deg, #007bff, #66ccff);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+/* ☠️ Out → Dark */
+.position.out {
+    background: #111;
+    color: #888;
+    opacity: 0.7;
+}
+
+.match-card {
+    position: relative;
+}
+
+/* 🔥 Bracket badge */
+.bracket {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+
+    text-transform: uppercase;
+    color: #fff;
+    background: #333;
+}
+
+/* 🔴 Upper */
+.bracket.upper {
+    background: linear-gradient(45deg, #ff1a1a, #990000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+/* 🔵 Lower */
+.bracket.lower {
+    background: linear-gradient(45deg, #007bff, #66ccff);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
 }

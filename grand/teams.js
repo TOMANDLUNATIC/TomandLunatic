@@ -6,14 +6,27 @@ fetch(sheetURL)
 
     const rows = csv.trim().split("\n").slice(1);
     const container = document.getElementById("teamsContainer");
+    const sortedRows = rows.sort((a, b) => {
+    const getPriority = (row) => {
+        const pos = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)[18]?.trim().toLowerCase();
 
-    rows.forEach(row => {
+        if (pos === "upper") return 1;
+        if (pos === "lower") return 2;
+        if (pos === "out") return 3;
+        return 4;
+    };
+
+    return getPriority(a) - getPriority(b);
+});
+
+    sortedRows.forEach(row => {
 
         const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
         const logo = cols[1]?.trim();
         const shortForm = cols[2]?.trim();
         const teamName = cols[3]?.trim();
+        const position = cols[18]?.trim();
 
         if (!teamName) return;
 
@@ -21,10 +34,14 @@ fetch(sheetURL)
         card.className = "team-card";
 
         card.innerHTML = `
-            <img src="${logo}" class="team-logo">
-            <h3>${teamName}</h3>
-            <span class="tag">${shortForm}</span>
-        `;
+    <div class="position ${position?.toLowerCase()}">
+        ${position || ""}
+    </div>
+
+    <img src="${logo}" class="team-logo">
+    <h3>${teamName}</h3>
+    <span class="tag">${shortForm}</span>
+`;
 
         // 🔥 CLICK → OPEN MODAL
         card.addEventListener("click", () => openModal(cols));
